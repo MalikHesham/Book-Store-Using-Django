@@ -5,12 +5,9 @@ class SimpleMiddleware:
         # One-time configuration and initialization.
 
     def __call__(self, request):
-        # Code to be executed for each request before
-        # the view (and later middleware) are called.
+
         if not request.user.is_active:
             return HttpResponseForbidden("Your are not an active user yet, please contact the administration")
 
-        # Code to be executed for each request/response after
-        # the view is called.
         return self.get_response(request)
 
