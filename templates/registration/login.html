@@ -7,7 +7,7 @@
     <title>Login Page</title>
 </head>
 <body>
-    <h3>please login</h3>
+    <h3>Login to Proceed</h3>
     <form action=" {% url 'login' %} " method = 'post'>
         {% csrf_token %}
         {{form.as_p}}
