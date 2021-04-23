@@ -19,16 +19,8 @@ class BookForm(forms.ModelForm):
             'category' : forms.Select(attrs={'class':'form-control'})
         }
 
-    def clean_title(self):
-        title = self.cleaned_data.get("select")
-        if "select" in title:
-            raise ValidationError("title shouldn't have the select word!")
-        return title
-
-
     def clean(self):
         super(BookForm, self).clean()
-        category = self.cleaned_data.get('category')
         title = self.cleaned_data.get('title')
         
         if len(title) < 10 or len(title) > 50:

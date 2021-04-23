@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import BookForm
 from .models import Book
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.decorators import permission_required
 
 def index(request):
     allBooks = Book.objects.all()
@@ -12,6 +12,7 @@ def index(request):
     })
 
 @login_required(login_url='/login')
+@permission_required(["books.add_book"] , raise_exception=True)
 def create(request):
     form =  BookForm(request.POST or None)
     if form.is_valid():
