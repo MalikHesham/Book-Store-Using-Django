@@ -22,6 +22,7 @@ def create(request):
         "form":form
     })
 
+@login_required(login_url='/login')
 def edit (request,id):
     book = Book.objects.get(pk=id)
     form =  BookForm(request.POST or None,instance=book)
@@ -34,6 +35,7 @@ def edit (request,id):
         "book":book
     })
 
+@login_required(login_url='/login')
 def delete (request,id):
     book = Book.objects.get(pk=id)
     book.delete()
