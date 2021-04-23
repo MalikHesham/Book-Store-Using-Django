@@ -1,0 +1,23 @@
+{% extends 'layout/main.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+{% if request.user.is_authenticated %}
+<h3> Welcome Back: {{ user.username }} </h3>
+{% endif %}
+
+
+<h3>Add a new book</h3>
+<a href=" {% url 'create' %} " class="btn btn-success"> Add a Book </a>
+
+<h3>List of Books:</h3>
+{% for book in allBooks %}
+<h3>{{book.title}}</h3>
+<p>{{book.description}}</p>
+<a class="btn btn-warning" href=" {% url 'edit' book.id %} ">Edit</a>
+<a class="btn btn-danger" href=" {% url 'delete' book.id %} ">Delete</a>
+<hr />
+{% endfor %}
+{% endblock body %}
+
