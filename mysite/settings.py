@@ -31,9 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
     'rest_framework',
-    "bootstrap4", # to enable bootstrap 4 classes
+    'rest_framework.authtoken',
     "books.apps.BooksConfig",
     "accounts",
     'django.contrib.admin',
