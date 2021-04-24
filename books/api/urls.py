@@ -9,6 +9,6 @@ urlpatterns = [
 
     path("", views.index),
     path("create", views.create),
-    path("edit/<int:id>", views.create),
-    
+    path("edit/<int:id>", views.update),
+    path("delete/<int:id>", views.destroy),
 ]
