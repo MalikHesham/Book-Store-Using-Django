@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "bootstrap4", # to enable bootstrap 4 classes
-    "books",
+    "books.apps.BooksConfig",
     "accounts",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'accounts.middleware.SimpleMiddleware'
+   # 'accounts.middleware.SimpleMiddleWare'
 ]
 
 ROOT_URLCONF = 'mysite.urls'
