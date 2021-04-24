@@ -6,7 +6,7 @@ class BookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = "__all__"
-        exclude = ("metrics","tag")
+        exclude = ("metrics","tag","category")
 
         widgets = {
             'title' : forms.TextInput(

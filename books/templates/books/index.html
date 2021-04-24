@@ -15,7 +15,7 @@
 {% for book in allBooks %}
 <h3>{{book.title}}</h3>
 <p>{{book.description}}</p>
-<p>{{book.category}}</p>
+
 <a class="btn btn-warning" href=" {% url 'edit' book.id %} ">Edit</a>
 <a class="btn btn-danger" href=" {% url 'delete' book.id %} ">Delete</a>
 <hr />
